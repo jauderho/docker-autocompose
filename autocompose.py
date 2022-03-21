@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-
+import datetime
 import sys, argparse, pyaml, docker
 from collections import OrderedDict
 
@@ -26,7 +26,21 @@ def render(struct, args, networks):
         pyaml.p(OrderedDict(struct))
     else:
         pyaml.p(OrderedDict({'version': '"3"', 'services': struct, 'networks': networks}))
-    
+
+
+def is_date_or_time(s: str):
+    for parse_func in [datetime.date.fromisoformat, datetime.datetime.fromisoformat]:
+        try:
+            parse_func(s.rstrip('Z'))
+            return True
+        except ValueError:
+            pass
+    return False
+
+
+def fix_label(label: str):
+    return f"'{label}'" if is_date_or_time(label) else label
+
 
 def generate(cname):
     c = docker.from_env()
@@ -57,7 +71,7 @@ def generate(cname):
         'environment': cattrs['Config']['Env'],
         'extra_hosts': cattrs['HostConfig']['ExtraHosts'],
         'image': cattrs['Config']['Image'],
-        'labels': cattrs['Config']['Labels'],
+        'labels': {label: fix_label(value) for label, value in cattrs['Config']['Labels'].items()},
         'links': cattrs['HostConfig']['Links'],
         #'log_driver': cattrs['HostConfig']['LogConfig']['Type'],
         #'log_opt': cattrs['HostConfig']['LogConfig']['Config'],
@@ -93,7 +107,8 @@ def generate(cname):
         networklist = c.networks.list()
         for network in networklist:
             if network.attrs['Name'] in values['networks']:
-                networks[network.attrs['Name']] = {'external': (not network.attrs['Internal'])}
+                networks[network.attrs['Name']] = {'external': (not network.attrs['Internal']),
+                                                   'name': network.attrs['Name']}
 
     # Check for command and add it if present.
     if cattrs['Config']['Cmd'] is not None:
