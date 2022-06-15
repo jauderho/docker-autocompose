@@ -7,7 +7,7 @@
 
 -i https://pypi.org/simple
 -e git+https://github.com/jauderho/docker-autocompose.git@06344269dd222be92dd6f811abf85d4fb1398646#egg=docker-autocompose
-certifi==2022.5.18.1
+certifi==2022.6.15
 charset-normalizer==2.0.12; python_version >= '3'
 docker==5.0.3
 idna==3.3; python_version >= '3'
