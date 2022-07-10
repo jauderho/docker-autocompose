@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@b0e28b5ac45a892f91e7d036f8200cf5ed489415 # v3
 
-      - uses: FranzDiebold/github-env-vars-action@3f6bf3969ae7033e3fc9534f87da0937d43d6240 # v2.3.1
+      - uses: FranzDiebold/github-env-vars-action@dae1d3475c087106eaa66144c1ab911f01b4a613 # v2.3.1
       - name: Print environment variables
         run: |
           echo "CI_REPOSITORY_NAME=$CI_REPOSITORY_NAME"
