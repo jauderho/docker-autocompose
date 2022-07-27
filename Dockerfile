@@ -1,4 +1,4 @@
-FROM python:3.11.0b4-alpine3.16@sha256:1a6cd028ea532db4d9d49de115e16cd2eb7e961c3812d4bae3dac173f694cf5a
+FROM python:3.11.0b5-alpine3.16@sha256:782424d03ec00b1355184e3b0013aa815ef7603e639f5ef9e50db0c2771cb52a
 LABEL org.opencontainers.image.source https://github.com/Red5d/docker-autocompose
 
 WORKDIR /usr/src/app
