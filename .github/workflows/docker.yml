@@ -65,7 +65,7 @@ jobs:
 
       - name: Build and push GHRC.io
         id: docker_build
-        uses: docker/build-push-action@c84f38281176d4c9cdb1626ffafcd6b3911b5d94 # v2.9.0
+        uses: docker/build-push-action@c56af957549030174b10d6867f20e78cfd7debc5 # v2.9.0
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
