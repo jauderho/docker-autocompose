@@ -29,7 +29,7 @@
                 "sha256:5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845",
                 "sha256:83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"
             ],
-            "markers": "python_version >= '3.6'",
+            "markers": "python_full_version >= '3.6.0'",
             "version": "==2.1.1"
         },
         "docker": {
@@ -43,7 +43,7 @@
         "docker-autocompose": {
             "editable": true,
             "git": "https://github.com/jauderho/docker-autocompose.git",
-            "ref": "06344269dd222be92dd6f811abf85d4fb1398646"
+            "ref": "00d15bd5f960849de8b5161342d0e3504784d23a"
         },
         "idna": {
             "hashes": [
@@ -55,11 +55,11 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:2198ec20bd4c017b8f9717e00f0c8714076fc2fd93816750ab48e2c41de2cfd3",
-                "sha256:957e2148ba0e1a3b282772e791ef1d8083648bc131c8ab0c1feba110ce1146c3"
+                "sha256:714ac14496c3e68c99c29b00845f7a2b85f3bb6f1078fd9f72fd20f0570002b2",
+                "sha256:b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==22.0"
+            "version": "==23.0"
         },
         "pyaml": {
             "hashes": [
