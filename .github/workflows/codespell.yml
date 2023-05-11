@@ -26,7 +26,7 @@ jobs:
     steps:
       # Checkout the code base #
       - name: Harden Runner
-        uses: step-security/harden-runner@6b3083af2869dc3314a0257a42f4af696cc79ba3 # v1
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v1
         with:
           egress-policy: block
           disable-telemetry: true
@@ -41,7 +41,7 @@ jobs:
 
       # Run Linter against code base #
       - name: Codespell
-        uses: codespell-project/actions-codespell@22ff5a2e4b591290baf82d47c9feadac31c65441 # master
+        uses: codespell-project/actions-codespell@94259cd8be02ad2903ba34a22d9c13de21a74461 # master
         with:
           check_filenames: true
           ignore_words_file: .codespellignore
