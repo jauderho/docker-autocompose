@@ -16,7 +16,7 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - name: Checkout
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - uses: FranzDiebold/github-env-vars-action@5be1a823971b42aea2115f6d742484ab9a314bb6 # v2.3.1
       - name: Print environment variables
@@ -65,7 +65,7 @@ jobs:
 
       - name: Build and push GHRC.io
         id: docker_build
-        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671 # v2.9.0
+        uses: docker/build-push-action@44ea916f6c540f9302d50c2b1e5a8dc071f15cdf # v2.9.0
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
