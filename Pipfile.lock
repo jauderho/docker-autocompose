@@ -122,7 +122,7 @@
         "docker-autocompose": {
             "editable": true,
             "git": "https://github.com/jauderho/docker-autocompose.git",
-            "ref": "3c4b827165ab00d593ee2195fae71ff6433977c0"
+            "ref": "1937c75635bdf1cbe532feb573da29a0b397a9c5"
         },
         "idna": {
             "hashes": [
@@ -142,12 +142,12 @@
         },
         "pyaml": {
             "hashes": [
-                "sha256:4b364804fe50d7b031904f37ab58cd744d48a406e9d7617bcf339b970eb00dc5",
-                "sha256:b3f9b38335327d3214c88834930037386c0fe4457e1ae19719c56faa239222bd"
+                "sha256:2b2c39017b718a127bef9f96bc55f89414d960876668d69880aae66f4ba98957",
+                "sha256:9dcc67922b7278f3680e573324b2e8a8d2f86c5d09bf640cba83735fb1663e97"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==23.9.3"
+            "version": "==23.9.6"
         },
         "pyyaml": {
             "hashes": [
@@ -232,11 +232,11 @@
         },
         "websocket-client": {
             "hashes": [
-                "sha256:53e95c826bf800c4c465f50093a8c4ff091c7327023b10bfaff40cf1ef170eaa",
-                "sha256:ce54f419dfae71f4bdba69ebe65bf7f0a93fe71bc009ad3a010aacc3eebad537"
+                "sha256:3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f",
+                "sha256:6cfc30d051ebabb73a5fa246efdcc14c8fbebbd0330f8984ac3bb6d9edd2ad03"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==1.6.2"
+            "version": "==1.6.3"
         }
     },
     "develop": {}
