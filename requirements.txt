@@ -1,6 +1,6 @@
 -i https://pypi.org/simple
 --extra-index-url https://www.piwheels.org/simple
-certifi==2024.8.30
+certifi==2024.12.14
 charset-normalizer==3.4.0
 docker==7.1.0
 -e git+https://github.com/jauderho/docker-autocompose.git@7ad2515aac253ca8e85032c3edb99a4bd26451be#egg=docker-autocompose
