@@ -1,10 +1,11 @@
-FROM python:3.12.3-alpine3.18@sha256:24680ddf8422899b24756d62b31eb5de782fbb42e9c2bb1c70f1f55fcf891721
-LABEL org.opencontainers.image.source https://github.com/Red5d/docker-autocompose
-
+FROM python:3.12-alpine
+LABEL org.opencontainers.image.source=https://github.com/Red5d/docker-autocompose
 WORKDIR /usr/src/app
+ENTRYPOINT [ "poetry", "run", "autocompose" ]
 
-COPY . .
+RUN apk add --no-cache poetry
 
-RUN python ./setup.py install
+COPY poetry.lock pyproject.toml README.md ./
+COPY src ./src
 
-ENTRYPOINT [ "python", "./autocompose.py" ]
+RUN poetry install
