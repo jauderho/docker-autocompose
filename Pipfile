@@ -13,7 +13,6 @@ name = "piwheels"
 docker-autocompose = { git = "https://github.com/jauderho/docker-autocompose.git", editable = true }
 pyaml = "*"
 docker = "*"
-six = "*"
 
 [dev-packages]
 
