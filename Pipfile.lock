@@ -139,7 +139,7 @@
         "docker-autocompose": {
             "editable": true,
             "git": "https://github.com/jauderho/docker-autocompose.git",
-            "ref": "d8103c36c317855379fe7c18ae27709bc1e68efa"
+            "ref": "2c32fcee5b992533c14ffe015e06ca26f8e5f79e"
         },
         "idna": {
             "hashes": [
