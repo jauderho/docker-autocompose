@@ -5,7 +5,7 @@ charset-normalizer==3.4.2
 docker==7.1.0
 -e git+https://github.com/jauderho/docker-autocompose.git@775956631914f1698579a9f97bba8284eae87618#egg=docker-autocompose
 idna==3.10
-pyaml==25.5.0
+pyaml==25.7.0
 pyyaml==6.0.2
 requests==2.32.4
 urllib3==2.5.0
