@@ -1,4 +1,4 @@
-FROM python:3.14.0-alpine
+FROM python:3.14.1-alpine
 LABEL org.opencontainers.image.source=https://github.com/Red5d/docker-autocompose
 WORKDIR /usr/src/app
 ENTRYPOINT [ "poetry", "run", "autocompose" ]
