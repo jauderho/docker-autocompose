@@ -204,7 +204,16 @@ def generate(cname, createvolumes=False):
         "domainname": cattrs.get("Config", {}).get("Domainname", None),
         "hostname": cattrs.get("Config", {}).get("Hostname", None),
         "ipc": cattrs.get("HostConfig", {}).get("IpcMode", None),
-        "mac_address": cattrs.get("NetworkSettings", {}).get("MacAddress", None),
+        "mac_address": cattrs.get("NetworkSettings", {}).get(
+            "MacAddress"
+        ) or next(
+            (
+                net.get("MacAddress")
+                for net in cattrs.get("NetworkSettings", {}).get("Networks", {}).values()
+                if net.get("MacAddress")
+            ),
+            None,
+        ),
         "privileged": cattrs.get("HostConfig", {}).get("Privileged", None),
         "restart": cattrs.get("HostConfig", {}).get("RestartPolicy", {}).get("Name", None),
         "read_only": cattrs.get("HostConfig", {}).get("ReadonlyRootfs", None),
