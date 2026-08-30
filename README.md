@@ -5,25 +5,25 @@ Required Modules:
 * [pyaml](https://pypi.python.org/project/pyaml/)
 * [docker](https://pypi.python.org/project/docker)
 
-For building this project [poetry](https://python-poetry.org/) is required. Install it with the package manager of your OS or if that's impossible with `pip`.
+This project is managed with [uv](https://docs.astral.sh/uv/). Install it with the package manager of your OS or with the [official installer](https://docs.astral.sh/uv/getting-started/installation/).
 
-Install them:
+Install the dependencies (uv creates the virtual environment for you):
 
-    poetry install
+    uv sync
 
 Example Usage:
 
-    poetry run autocompose <container ids>
+    uv run autocompose <container ids>
 
 
 Generate a compose file for multiple containers together:
 
-    poetry run autocompose apache-test mysql-test
+    uv run autocompose apache-test mysql-test
 
 
 The script defaults to outputting to compose file version 3, but use "-v 1" to output to version 1:
 
-    poetry run autocompose -v 1 apache-test
+    uv run autocompose -v 1 apache-test
 
 
 Outputs a docker-compose compatible yaml structure:
@@ -37,6 +37,10 @@ While experimenting with various docker containers from the Hub, I realized that
 With this tool, I can easily generate docker-compose files for managing the containers that I've set up manually.
 
 ## Native installation
+
+The recommended way to install the command without cloning the repo is:
+
+    uv tool install git+https://github.com/Red5d/docker-autocompose.git
 
 System-wide installation is discouraged. If you really need to, you can run `pip install --user --break-system-packages .` (use at your own discretion).
 
