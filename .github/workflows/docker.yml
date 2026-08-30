@@ -6,9 +6,17 @@ on:
   schedule:
     - cron: '0 5 * * *'
 
+# Declare default permissions as read only.
+permissions:
+  contents: read
+
 jobs:
   GHRC:
     runs-on: ubuntu-24.04
+    permissions:
+      # Needed to push the image to the GitHub Container Registry.
+      contents: read
+      packages: write
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v1
