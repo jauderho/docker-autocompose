@@ -27,7 +27,14 @@ The script defaults to outputting to compose file version 3, but use "-v 1" to o
 
 
 Outputs a docker-compose compatible yaml structure:
- @@ -33,9 +38,7 @@ With this tool, I can easily generate docker-compose files for managing the cont
+
+[docker-compose reference](https://docs.docker.com/compose/)
+
+[docker-compose yaml file specification](https://docs.docker.com/compose/compose-file/)
+
+While experimenting with various docker containers from the Hub, I realized that I'd started several containers with complex options for volumes, ports, environment variables, etc. and there was no way I could remember all those commands without referencing the Hub page for each image if I needed to delete and re-create the container (for updates, or if something broke).
+
+With this tool, I can easily generate docker-compose files for managing the containers that I've set up manually.
 
 ## Native installation
 
