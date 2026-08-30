@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 import argparse
-import datetime
 import re
 import sys
 
@@ -110,16 +109,15 @@ def main():
     struct = {}
     networks = {}
     volumes = {}
-    containers = {}
 
     for cname in container_names:
         cfile, c_networks, c_volumes = generate(cname, createvolumes=args.createvolumes)
 
         struct.update(cfile)
 
-        if not c_networks == None:
+        if c_networks is not None:
             networks.update(c_networks)
-        if not c_volumes == None:
+        if c_volumes is not None:
             volumes.update(c_volumes)
 
     # moving the networks = None statements outside of the for loop. Otherwise any container could reset it.
@@ -243,14 +241,6 @@ def generate(cname, createvolumes=False):
                     "external": (not network.attrs["Internal"]),
                     "name": network.attrs["Name"],
                 }
-    #     volumes = {}
-    #     if values['volumes'] is not None:
-    #         for volume in values['volumes']:
-    #             volume_name = volume.split(':')[0]
-    #             volumes[volume_name] = {'external': True}
-    #     else:
-    #         volumes = None
-
     # handles both the returned values['volumes'] (in c_file) and volumes for both, the bind and volume types
     # also includes the read only option
     volumes = {}
@@ -301,7 +291,7 @@ def generate(cname, createvolumes=False):
 
     except (KeyError, TypeError):
         # No ports exposed/bound. Continue without them.
-        ports = None
+        pass
     
     # fixup strings in labels and env
     if values["labels"] is not None:
