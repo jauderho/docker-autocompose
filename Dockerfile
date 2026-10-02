@@ -13,7 +13,7 @@
 # Dependencies are installed from uv.lock with --locked, so the runtime image
 # is reproducible. Base images are pinned by digest.
 
-FROM python:3.14.7-alpine@sha256:9e9fde4d32eedce0b661d9ab91e826b62dddf28e928c230ec55f1866cac66b01 AS builder
+FROM python:3.15.0rc2-alpine@sha256:a73535961d3114b7b2e6948ef2dd8d295b885a76d3c23e87e688856713c1cbac AS builder
 
 ARG UV_VERSION=0.12.7
 
@@ -31,7 +31,7 @@ COPY src ./src
 
 RUN uv sync --locked --no-dev --no-editable
 
-FROM python:3.14.7-alpine@sha256:9e9fde4d32eedce0b661d9ab91e826b62dddf28e928c230ec55f1866cac66b01
+FROM python:3.15.0rc2-alpine@sha256:a73535961d3114b7b2e6948ef2dd8d295b885a76d3c23e87e688856713c1cbac
 
 LABEL org.opencontainers.image.source=https://github.com/Red5d/docker-autocompose
 
